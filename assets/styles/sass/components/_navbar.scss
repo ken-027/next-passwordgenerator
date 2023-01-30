@@ -1,0 +1,25 @@
+@use '../config/variables' as var;
+@use '../mixins/spacing' as space;
+
+nav {
+  color: var.$primary-color;
+  display: flex;
+  justify-content: space-between;
+  // padding: var.$space_2;
+  @include space.px(var.$space_18);
+  img {
+    max-width: 100% !important;
+    display: block !important;
+  }
+  a {
+    font-size: 1.2rem;
+  }
+  ul {
+    display: flex;
+    gap: var.$space_8;
+    align-items: center;
+  }
+  .btn {
+    background-color: var.$white !important;
+  }
+}

@@ -1,0 +1,67 @@
+@use '../mixins/index' as mix;
+@use './variables' as var;
+@use '../components/button';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  @include mix.font-family;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: var.$primary-color;
+  body {
+    margin: auto;
+    max-width: var.$max_width;
+
+    @for $index from 1 to 6 {
+      h#{$index} {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+    }
+    
+    main {
+      min-height: 70vh;
+      padding: {
+        top: var.$space_5;
+        bottom: var.$space_5;
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 0.45rem;
+  height: 0.45rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: none;
+  border-radius: 1rem;
+  border: 1px solid var.$border-color;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #a2a2a2;
+}
